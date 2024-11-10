@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# 🎥 Disney+ 클론 앱
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[👉 Disney+ 클론 앱 바로 가기](https://react-disney-plus-app-a8514.web.app/)
 
-## Available Scripts
+## 📋 목차
+1. [📖 프로젝트 소개](#프로젝트-소개)
+2. [✨ 주요 기능](#주요-기능)
+3. [🛠️ 사용 기술](#사용-기술)
+4. [📂 프로젝트 구조](#프로젝트-구조)
+5. [📸 결과 화면](#결과-화면)
+6. [🌐 배포 링크](#배포-링크)
+7. [📜 라이센스](#라이센스)
 
-In the project directory, you can run:
+## 📖 프로젝트 소개
+React를 활용해 **Disney+ 앱**의 주요 기능을 구현한 클론 프로젝트입니다.<br>  
+Firebase Authentication을 통해 **로그인 기능**을 구현하였고, Firebase Hosting을 사용해 배포했습니다.<br>  
+**Disney+의 직관적이고 깔끔한 UI/UX**를 최대한 유사하게 구현하는 데 중점을 두었습니다.<br>
 
-### `npm start`
+## ✨ 주요 기능
+- **Firebase 기반 로그인/회원가입 기능**
+- 로컬 스토리지를 이용하여 사용자 정보 유지
+- **사용자 별 맞춤형 대시보드**
+- **영화 및 시리즈 목록 조회**
+- **반응형 디자인**으로 다양한 디바이스에서 최적화된 UI 제공
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ 사용 기술
+![js](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white)
+![CSS](https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![HTML](https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![React](https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![React_Router](https://img.shields.io/badge/reactrouter-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white)
+![firebase](https://img.shields.io/badge/firebase-DD2C00?style=for-the-badge&logo=firebase&logoColor=white)
+![styledcomponents](https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white)
+![axios](https://img.shields.io/badge/axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📂 프로젝트 구조
+```bash
+📦 react-disney-plus-app
+├─ .gitignore
+├─ README.md
+├─ package-lock.json
+├─ package.json
+├─ public
+│  ├─ favicon.ico
+│  ├─ images
+│  │  ├─ cta-logo-one.png
+│  │  ├─ cta-logo-one.svg
+│  │  ├─ cta-logo-two.png
+│  │  ├─ group-icon.png
+│  │  ├─ home-background.png
+│  │  ├─ home-icon.svg
+│  │  ├─ login-background.jpg
+│  │  ├─ logo.svg
+│  │  ├─ movie-icon.svg
+│  │  ├─ original-icon.svg
+│  │  ├─ play-icon-black.png
+│  │  ├─ play-icon-white.png
+│  │  ├─ search-icon.svg
+│  │  ├─ series-icon.svg
+│  │  ├─ slider-badag.jpg
+│  │  ├─ slider-badging.jpg
+│  │  ├─ slider-scale.jpg
+│  │  ├─ slider-scales.jpg
+│  │  ├─ viewers-disney.png
+│  │  ├─ viewers-marvel.png
+│  │  ├─ viewers-national.png
+│  │  ├─ viewers-pixar.png
+│  │  ├─ viewers-starwars.png
+│  │  └─ watchlist-icon.svg
+│  ├─ index.html
+│  ├─ logo192.png
+│  ├─ logo512.png
+│  ├─ manifest.json
+│  ├─ robots.txt
+│  └─ videos
+│     ├─ disney.mp4
+│     ├─ marvel.mp4
+│     ├─ national-geographic.mp4
+│     ├─ pixar.mp4
+│     └─ star-wars.mp4
+└─ src
+   ├─ App.css
+   ├─ App.js
+   ├─ App.test.js
+   ├─ api
+   │  ├─ axios.js
+   │  └─ request.js
+   ├─ components
+   │  ├─ Banner.css
+   │  ├─ Banner.js
+   │  ├─ Category.js
+   │  ├─ MovieModal
+   │  │  ├─ MovieModal.css
+   │  │  └─ index.js
+   │  ├─ Nav.js
+   │  ├─ Row.css
+   │  └─ Row.js
+   ├─ hooks
+   │  ├─ useDebounce.js
+   │  └─ useOnClickOutside.js
+   ├─ index.css
+   ├─ index.js
+   ├─ logo.svg
+   ├─ pages
+   │  ├─ DetailPage
+   │  │  └─ index.js
+   │  ├─ LoginPage
+   │  │  └─ index.js
+   │  ├─ MainPage
+   │  │  └─ index.js
+   │  └─ SearchPage
+   │     ├─ SearchPage.css
+   │     └─ index.js
+   ├─ reportWebVitals.js
+   └─ setupTests.js
+```
 
-### `npm test`
+## 🌐 배포 링크
+Disney+ 클론 앱을 아래 링크에서 직접 확인해보세요!  
+[Disney+ 클론 앱 배포 링크](https://react-disney-plus-app-a8514.web.app/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📜 라이센스
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+본 프로젝트는 학습 목적으로 제작된 클론 프로젝트입니다. 상업적 이용은 금지됩니다.
+```
