@@ -1,6 +1,6 @@
 # 🎥 Disney+ 클론 앱
 
-[👉 Disney+ 클론 앱 바로 가기](https://react-disney-plus-app-a8514.web.app/)
+👉 [Disney+ 클론 앱 바로 가기](https://react-disney-plus-app-a8514.web.app/)
 
 ## 📋 목차
 1. [📖 프로젝트 소개](#프로젝트-소개)
