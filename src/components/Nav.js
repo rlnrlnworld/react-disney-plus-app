@@ -1,6 +1,9 @@
-import { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, signOut } from 'firebase/auth'
+import { onAuthStateChanged, signInWithPopup, GoogleAuthProvider, signOut } from 'firebase/auth'
+import { auth } from "../firebase";
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { removeUser, setUser } from '../store/userSlice'
 import styled from'styled-components'
 
 
@@ -9,13 +12,9 @@ const Nav = () => {
   const { pathname } = useLocation()
   const [searchValue, setSearchValue] = useState('')
   const navigate = useNavigate()
-  const auth = getAuth()
   const provider = new GoogleAuthProvider()
 
-  const initialUserData = localStorage.getItem('userData') ? JSON.parse(localStorage.getItem('userData')) : {}
-  
-  const [userData, setUserData] = useState(initialUserData)
-  
+  const userData = useSelector(state => state.user);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -49,13 +48,18 @@ const Nav = () => {
     navigate(`/search?q=${e.target.value}`)
   }
 
+  const dispatch = useDispatch();
+
   // 로그인
   const handleAuth = () => {
     signInWithPopup(auth, provider)
      .then((result) => {
-        setUserData(result.user)
-        localStorage.setItem('userData', JSON.stringify(result.user))
-        console.log(`Signed in as ${result.user.displayName}`);
+        dispatch(setUser({
+          id: result.user.uid,
+          email: result.user.email,
+          photoURL: result.user.photoURL,
+          displayName: result.user.displayName,
+        }));
       })
      .catch((error) => {
         alert(error.message)
@@ -65,7 +69,7 @@ const Nav = () => {
   // 로그아웃
   const handleLogOut = () => {
     signOut(auth).then(() => {
-      setUserData({})
+      dispatch(removeUser());
       navigate("/")
     }).catch((error) => {
       alert(error.message)
